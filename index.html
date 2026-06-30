@@ -230,56 +230,67 @@
   let redirected = false;
 
   const timerEl = document.getElementById('outerTimer');
-  const btn     = document.getElementById('actionBtn');
+  const btn = document.getElementById('actionBtn');
   const btnText = document.getElementById('btnText');
 
-  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+  function pad(n) {
+    return n < 10 ? '0' + n : '' + n;
+  }
 
-  // button disable at start
-  btn.style.pointerEvents = 'none';
-  btn.style.opacity = '0.6';
+  // Button hamesha clickable rahega
+  btn.style.pointerEvents = 'auto';
+  btn.style.opacity = '1';
 
-  const outerTimer = setInterval(function(){
+  const outerTimer = setInterval(function () {
+
     outerCount--;
     timerEl.textContent = '00:' + pad(outerCount);
 
-    if(outerCount <= 3){
+    if (outerCount <= 3) {
       timerEl.classList.add('urgent');
     }
 
-    if(outerCount <= 0){
+    if (outerCount <= 0) {
       clearInterval(outerTimer);
       timerEl.textContent = '00:00';
-      doRedirect(); // seedha redirect at 10s
+      doRedirect();
     }
+
   }, 1000);
 
-  function doRedirect(){
-    if(redirected) return;
+  // Auto Redirect
+  function doRedirect() {
+
+    if (redirected) return;
     redirected = true;
+
     btn.classList.add('glow');
-    btn.style.opacity = '1';
     btnText.textContent = 'Connecting...';
-    setTimeout(function(){ window.location.href = REDIRECT_URL; }, 300);
+
+    setTimeout(function () {
+      window.location.href = REDIRECT_URL;
+    }, 300);
+
   }
 
-  // Manual click — seedha redirect
-  function manualRedirect(){
-    if(redirected) return;
+  // Manual Redirect
+  function manualRedirect() {
+
+    if (redirected) return;
     redirected = true;
 
     clearInterval(outerTimer);
+
     timerEl.textContent = '00:00';
     timerEl.classList.add('urgent');
 
-    btn.style.opacity = '0.8';
-    btn.style.pointerEvents = 'none';
     btn.classList.add('glow');
     btnText.textContent = 'Connecting...';
 
-    setTimeout(function(){
+    setTimeout(function () {
       window.location.href = REDIRECT_URL;
     }, 300);
+
   }
 </script>
 
