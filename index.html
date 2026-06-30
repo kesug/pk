@@ -40,7 +40,6 @@
       }
       .overlay { position: fixed; inset: 0; background: radial-gradient(circle at center, rgba(15, 23, 42, 0.95) 0%, rgba(9, 13, 22, 1) 100%); z-index: -1; }
 
-      /* === BIG OUTER TIMER === */
       .outer-timer {
         font-size: 64px;
         font-weight: 800;
@@ -165,8 +164,6 @@
 <body>
     <div class="overlay"></div>
 
-    <!-- BIG OUTER COUNTDOWN TIMER -->
-
     <div class="glass-card">
         <div class="profile-container">
             <img src="ca.jpg" alt="Profile" class="profile-img">
@@ -212,8 +209,8 @@
                 <span><b>Real-time Charts</b> and educational updates</span>
             </div>
         </div>
-            <div class="outer-timer" id="outerTimer">00:10</div>
 
+        <div class="outer-timer" id="outerTimer">00:05</div>
 
         <div>
             <a href="#" target="_blank" class="agency-tag">📱 SIVIADSAGENCY</a>
@@ -238,11 +235,10 @@
 
   function pad(n){ return n < 10 ? '0' + n : '' + n; }
 
-  // disable button at start
+  // button disable at start
   btn.style.pointerEvents = 'none';
   btn.style.opacity = '0.6';
 
-  // STEP 1 — outer 10s countdown (big timer on page)
   const outerTimer = setInterval(function(){
     outerCount--;
     timerEl.textContent = '00:' + pad(outerCount);
@@ -254,56 +250,36 @@
     if(outerCount <= 0){
       clearInterval(outerTimer);
       timerEl.textContent = '00:00';
-
-      // STEP 2 — inner 2s on button
-      startInnerTimer();
+      doRedirect(); // seedha redirect at 10s
     }
   }, 1000);
-
-  function startInnerTimer(){
-    btn.classList.add('glow');
-    btnText.textContent = 'Opening in ' + innerCount + ' sec...';
-
-    const innerTimer = setInterval(function(){
-      innerCount--;
-
-      if(innerCount > 0){
-        btnText.textContent = 'Opening in ' + innerCount + ' sec...';
-      } else {
-        clearInterval(innerTimer);
-        doRedirect();
-      }
-    }, 1000);
-  }
 
   function doRedirect(){
     if(redirected) return;
     redirected = true;
-    btnText.textContent = 'Connecting...';
+    btn.classList.add('glow');
     btn.style.opacity = '1';
+    btnText.textContent = 'Connecting...';
     setTimeout(function(){ window.location.href = REDIRECT_URL; }, 300);
   }
 
-  // Manual click — 2s delay then redirect
+  // Manual click — seedha redirect
   function manualRedirect(){
     if(redirected) return;
     redirected = true;
 
-    clearInterval(outerTimer); // stop outer timer
+    clearInterval(outerTimer);
     timerEl.textContent = '00:00';
     timerEl.classList.add('urgent');
 
     btn.style.opacity = '0.8';
     btn.style.pointerEvents = 'none';
     btn.classList.add('glow');
-    btnText.textContent = 'Securing Connection... Please Wait';
+    btnText.textContent = 'Connecting...';
 
     setTimeout(function(){
-      btnText.textContent = 'Opening in 1 sec...';
-      setTimeout(function(){
-        window.location.href = REDIRECT_URL;
-      }, 1000);
-    }, 1000);
+      window.location.href = REDIRECT_URL;
+    }, 300);
   }
 </script>
 
