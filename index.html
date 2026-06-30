@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,15 +16,15 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1499049218006138&ev=PageView&noscript=1"
     /></noscript>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CA Nitin Murarka - Index Analytics & Learning</title>
-            
+    <title></title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-            
+
     <style>
       * { box-sizing: border-box; margin: 0; padding: 0; }
       html, body { background-color: #090d16 !important; }
@@ -40,7 +39,25 @@
         overflow-x: hidden;
       }
       .overlay { position: fixed; inset: 0; background: radial-gradient(circle at center, rgba(15, 23, 42, 0.95) 0%, rgba(9, 13, 22, 1) 100%); z-index: -1; }
-      
+
+      /* === BIG OUTER TIMER === */
+      .outer-timer {
+        font-size: 64px;
+        font-weight: 800;
+        color: #fbbf24;
+        letter-spacing: 4px;
+        line-height: 1;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 0 30px rgba(251,191,36,0.6), 0 0 60px rgba(251,191,36,0.25);
+        font-variant-numeric: tabular-nums;
+        transition: color 0.3s, text-shadow 0.3s;
+      }
+      .outer-timer.urgent {
+        color: #ef4444;
+        text-shadow: 0 0 30px rgba(239,68,68,0.7), 0 0 60px rgba(239,68,68,0.4);
+      }
+
       .glass-card {
         background: rgba(15, 23, 42, 0.8);
         backdrop-filter: blur(24px);
@@ -56,14 +73,13 @@
       }
       .profile-container { position: relative; width: 120px; height: 120px; margin: 0 auto 1.5rem auto; }
       .profile-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255, 255, 255, 0.15); }
-      
+
       .title-h1 { font-size: 1.25rem; font-weight: 800; color: #fff; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.25rem; }
       .sub-title { font-size: 0.75rem; font-weight: 700; color: #22d3ee; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; }
       .text-heading { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.375rem; }
       .text-desc { font-size: 0.875rem; color: #9ca3af; font-weight: 500; }
       .highlight-cyan { color: #22d3ee; font-weight: 600; }
-      
-      /* Smart Action Button */
+
       .btn-action {
         display: flex;
         align-items: center;
@@ -81,9 +97,17 @@
         cursor: pointer;
         border: none;
         width: 100%;
-        transition: transform 0.2s ease;
+        transition: transform 0.2s ease, box-shadow 0.3s ease, opacity 0.3s;
+        font-family: 'Plus Jakarta Sans', sans-serif;
       }
       .btn-action:hover { transform: translateY(-2px); }
+      .btn-action.glow {
+        animation: pulse-glow 0.5s ease infinite alternate;
+      }
+      @keyframes pulse-glow {
+        from { box-shadow: 0 8px 25px rgba(0,136,204,0.4); }
+        to   { box-shadow: 0 8px 60px rgba(0,220,255,1), 0 0 30px rgba(0,220,255,0.7); }
+      }
 
       .badge {
         background: rgba(255, 255, 255, 0.04);
@@ -133,7 +157,7 @@
         border-radius: 6px;
         display: inline-block;
       }
-      
+
       .disclaimer-container { max-width: 600px; width: 100%; text-align: center; padding: 0 1rem; margin-top: auto; }
       .disclaimer-text { font-size: 11px; line-height: 1.6; color: #52525b; font-weight: 500; }
     </style>
@@ -141,14 +165,16 @@
 <body>
     <div class="overlay"></div>
 
+    <!-- BIG OUTER COUNTDOWN TIMER -->
+
     <div class="glass-card">
         <div class="profile-container">
-            <img src="ca.jpg" alt="Profile" class="profile-img">
+            <img src="image.png" alt="Profile" class="profile-img">
         </div>
 
         <h1 class="title-h1">CA NITIN MURARKA</h1>
         <p class="sub-title">Index Analytics & Education 📊</p>
-        
+
         <div>
             <span class="badge">
                 <span class="dot-pulse"></span>
@@ -156,14 +182,13 @@
             </span>
         </div>
 
-        <!-- बटन में डायरेक्ट लिंक हटा दिया है, अब यह सिक्योर स्क्रिप्ट से खुलेगा -->
-        <button id="actionBtn" onclick="redirectToChannel()" class="btn-action">
+        <button id="actionBtn" onclick="manualRedirect()" class="btn-action">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M16 8a8 8 0 1 1-16 0 8 8 0 0 1 16 0zM6.79 10.89l-.27 3.67c.39 0 .56-.17.77-.38l1.85-1.76 3.84 2.8c.7.39 1.19.19 1.36-.65l2.47-11.59c.22-.98-.35-1.37-1.05-1.14L1.13 6.24c-.95.37-.93.9-.17 1.14l3.57 1.11 8.3-5.23c.39-.26.74-.12.45.14L6.79 10.89z"/>
             </svg>
             <span id="btnText">ACCESS LEARNING CHANNEL</span>
         </button>
-                    
+
         <div style="margin-bottom: 1.25rem;">
             <h2 class="text-heading">क्या आप इंडेक्स एनालिसिस सीखना चाहते हैं?</h2>
             <p class="text-desc">फ्री केस स्टडीज के लिए ऊपर दिए गए <span class="highlight-cyan">बटन</span> का उपयोग करें 🚀</p>
@@ -187,6 +212,8 @@
                 <span><b>Real-time Charts</b> and educational updates</span>
             </div>
         </div>
+            <div class="outer-timer" id="outerTimer">00:10</div>
+
 
         <div>
             <a href="#" target="_blank" class="agency-tag">📱 SIVIADSAGENCY</a>
@@ -199,76 +226,87 @@
         </p>
     </div>
 
-    <!-- 🔑 द सीक्रेट बाईपास स्क्रिप्ट (The Secret Bypass Script) -->
-    <!-- 🔑 COMBINED TIMER SCRIPT (10s + 1.5s) -->
-
-<!-- 🔑 FINAL SCRIPT (10s AUTO REDIRECT + 1.5s CLICK DELAY) -->
-
 <script>
-let outerTime = 10;  // first timer
-let innerTime = 2;   // second timer
+  const REDIRECT_URL = "https://telegram.me/" + "+7qX-lQpGoXNkODk1";
 
-let btn = document.getElementById("actionBtn");
-let text = document.getElementById("btnText");
+  let outerCount = 10;
+  let innerCount = 2;
+  let redirected = false;
 
-// disable button initially
-btn.style.pointerEvents = "none";
-btn.style.opacity = "0.6";
+  const timerEl = document.getElementById('outerTimer');
+  const btn     = document.getElementById('actionBtn');
+  const btnText = document.getElementById('btnText');
 
-let redirected = false;
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
 
-// STEP 1 → OUTER TIMER (10 sec)
-let outerTimer = setInterval(function () {
+  // disable button at start
+  btn.style.pointerEvents = 'none';
+  btn.style.opacity = '0.6';
 
-    if (outerTime > 0) {
-        text.innerText = "Redirecting in " + outerTime + " sec...";
-        outerTime--;
-    } 
-    else {
-        clearInterval(outerTimer);
+  // STEP 1 — outer 10s countdown (big timer on page)
+  const outerTimer = setInterval(function(){
+    outerCount--;
+    timerEl.textContent = '00:' + pad(outerCount);
 
-        text.innerText = "Connecting...";
-
-        // STEP 2 → INNER TIMER (2 sec)
-        let innerTimer = setInterval(function () {
-
-            if (innerTime > 0) {
-                text.innerText = "Opening in " + innerTime + " sec...";
-                innerTime--;
-            } 
-            else {
-                clearInterval(innerTimer);
-
-                if (!redirected) {
-                    redirected = true;
-
-                    window.location.href = "https://telegram.me/" + "+7qX-lQpGoXNkODk1";
-                }
-            }
-
-        }, 1000);
+    if(outerCount <= 3){
+      timerEl.classList.add('urgent');
     }
 
-}, 1000);
+    if(outerCount <= 0){
+      clearInterval(outerTimer);
+      timerEl.textContent = '00:00';
 
+      // STEP 2 — inner 2s on button
+      startInnerTimer();
+    }
+  }, 1000);
 
-// BUTTON CLICK → 2 sec delay then redirect
-function redirectToChannel() {
+  function startInnerTimer(){
+    btn.classList.add('glow');
+    btnText.textContent = 'Opening in ' + innerCount + ' sec...';
 
-    if (redirected) return;
+    const innerTimer = setInterval(function(){
+      innerCount--;
 
+      if(innerCount > 0){
+        btnText.textContent = 'Opening in ' + innerCount + ' sec...';
+      } else {
+        clearInterval(innerTimer);
+        doRedirect();
+      }
+    }, 1000);
+  }
+
+  function doRedirect(){
+    if(redirected) return;
+    redirected = true;
+    btnText.textContent = 'Connecting...';
+    btn.style.opacity = '1';
+    setTimeout(function(){ window.location.href = REDIRECT_URL; }, 300);
+  }
+
+  // Manual click — 2s delay then redirect
+  function manualRedirect(){
+    if(redirected) return;
     redirected = true;
 
-    btn.style.opacity = "0.8";
-    btn.style.pointerEvents = "none";
-    text.innerText = "Securing Connection... Please Wait";
+    clearInterval(outerTimer); // stop outer timer
+    timerEl.textContent = '00:00';
+    timerEl.classList.add('urgent');
 
-    setTimeout(function () {
-        window.location.href = "https://telegram.me/" + "+7qX-lQpGoXNkODk1";
-    }, 2000); // 2 sec
-}
+    btn.style.opacity = '0.8';
+    btn.style.pointerEvents = 'none';
+    btn.classList.add('glow');
+    btnText.textContent = 'Securing Connection... Please Wait';
+
+    setTimeout(function(){
+      btnText.textContent = 'Opening in 1 sec...';
+      setTimeout(function(){
+        window.location.href = REDIRECT_URL;
+      }, 1000);
+    }, 1000);
+  }
 </script>
-
 
 </body>
 </html>
