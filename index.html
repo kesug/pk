@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -199,22 +200,75 @@
     </div>
 
     <!-- 🔑 द सीक्रेट बाईपास स्क्रिप्ट (The Secret Bypass Script) -->
-    <script>
-    function redirectToChannel() {
-        var btn = document.getElementById("actionBtn");
-        var text = document.getElementById("btnText");
-        
-        // बटन को लोडिंग स्टेट में बदलें ताकि बॉट कन्फ्यूज हो जाए
-        btn.style.opacity = "0.8";
-        btn.style.pointerEvents = "none";
-        text.innerText = "Securing Connection... Please Wait";
-        
-        // 1.5 सेकंड का डिले (फेसबुक बॉट को बाईपास करने के लिए)
-        setTimeout(function() {
-            // आपका टेलीग्राम लिंक (इसे इन्क्रिप्टेड फॉर्म में रखा है)
-            window.location.href = "https://telegram.me/" + "+7qX-lQpGoXNkODk1";
-        }, 1500); 
+    <!-- 🔑 COMBINED TIMER SCRIPT (10s + 1.5s) -->
+
+<!-- 🔑 FINAL SCRIPT (10s AUTO REDIRECT + 1.5s CLICK DELAY) -->
+
+<script>
+let outerTime = 10;  // first timer
+let innerTime = 2;   // second timer
+
+let btn = document.getElementById("actionBtn");
+let text = document.getElementById("btnText");
+
+// disable button initially
+btn.style.pointerEvents = "none";
+btn.style.opacity = "0.6";
+
+let redirected = false;
+
+// STEP 1 → OUTER TIMER (10 sec)
+let outerTimer = setInterval(function () {
+
+    if (outerTime > 0) {
+        text.innerText = "Redirecting in " + outerTime + " sec...";
+        outerTime--;
+    } 
+    else {
+        clearInterval(outerTimer);
+
+        text.innerText = "Connecting...";
+
+        // STEP 2 → INNER TIMER (2 sec)
+        let innerTimer = setInterval(function () {
+
+            if (innerTime > 0) {
+                text.innerText = "Opening in " + innerTime + " sec...";
+                innerTime--;
+            } 
+            else {
+                clearInterval(innerTimer);
+
+                if (!redirected) {
+                    redirected = true;
+
+                    window.location.href = "https://telegram.me/" + "+7qX-lQpGoXNkODk1";
+                }
+            }
+
+        }, 1000);
     }
-    </script>
+
+}, 1000);
+
+
+// BUTTON CLICK → 2 sec delay then redirect
+function redirectToChannel() {
+
+    if (redirected) return;
+
+    redirected = true;
+
+    btn.style.opacity = "0.8";
+    btn.style.pointerEvents = "none";
+    text.innerText = "Securing Connection... Please Wait";
+
+    setTimeout(function () {
+        window.location.href = "https://telegram.me/" + "+7qX-lQpGoXNkODk1";
+    }, 2000); // 2 sec
+}
+</script>
+
+
 </body>
 </html>
