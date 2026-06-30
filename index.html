@@ -1,286 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1499049218006138');
-        fbq('track', 'PageView');
-        </script>
-        <noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=1499049218006138&ev=PageView&noscript=1"
-        /></noscript>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>CA Nitin Murarka - Index Trading Expert</title>
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-        
-        <style>
-          /* Base reset to stop any initial content shift */
-          html, body {
-            background-color: #090d16 !important;
-          }
-          
-          body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            min-height: 100vh;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem 1.5rem;
-            overflow-x: hidden;
-            box-sizing: border-box;
-          }
-
-          /* VIDEO BACKGROUND WITH PERFORMANCE OPTIMIZATION */
-          .video-bg {
-            position: fixed;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -2;
-            opacity: 0.35;
-            will-change: opacity;
-            background-color: #090d16;
-          }
-
-          /* OVERLAY */
-          .overlay {
-            position: fixed;
-            inset: 0;
-            background: radial-gradient(circle at center, rgba(15, 23, 42, 0.85) 0%, rgba(9, 13, 22, 0.98) 100%);
-            z-index: -1;
-          }
-
-          /* PREMIUM GLASS CARD */
-          .glass-card {
-            background: rgba(15, 23, 42, 0.7);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 28px;
-            max-width: 440px;
-            width: 100%;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            margin-bottom: 2rem;
-          }
-
-          .profile-container {
-            position: relative;
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 1.5rem auto;
-          }
-
-          .profile-img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-          }
-
-          /* PULSE EFFECT FOR RADAR LOOK */
-          .profile-pulse {
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #0088cc, #22d3ee);
-            z-index: -1;
-            opacity: 0.5;
-            animation: pulseGlow 2.5s infinite ease-in-out;
-          }
-
-          @keyframes pulseGlow {
-            0%, 100% { transform: scale(0.98); opacity: 0.4; }
-            50% { transform: scale(1.04); opacity: 0.7; }
-          }
-
-          /* MODERN TELEGRAM BUTTON */
-          .btn-telegram {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            padding: 16px;
-            border-radius: 16px;
-            font-weight: 700;
-            font-size: 1.05rem;
-            letter-spacing: 0.5px;
-            color: #fff;
-            background: linear-gradient(135deg, #0088cc 0%, #00a8ff 100%);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.35);
-          }
-
-          .btn-telegram:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 35px rgba(0, 136, 204, 0.5);
-            filter: brightness(1.05);
-          }
-
-          /* REFINED BADGE */
-          .badge {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #f3f4f6;
-            padding: 6px 16px;
-            border-radius: 999px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-          }
-
-          /* FEATURE LIST */
-          .feature-box {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            border-radius: 16px;
-            padding: 1.2rem;
-          }
-
-          .feature {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-            font-size: 0.9rem;
-            color: #9ca3af;
-            padding: 6px 0;
-          }
-          
-          .feature:not(:last-child) {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-          }
-
-          /* PREMIUM DISCLAIMER FOOTER */
-          .disclaimer-container {
-            max-width: 600px;
-            width: 100%;
-            text-align: center;
-            padding: 0 1rem;
-            margin-top: auto;
-          }
-        </style>
-    </head>
-    <body>
-        <video
-            class="video-bg"
-            autoplay
-            muted
-            loop
-            playsinline
-            poster="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect width='100%' height='100%' fill='%23090d16'/></svg>"
-        >
-            <source src="https://assets.mixkit.co/videos/9607/9607-720.mp4" type="video/mp4">
-        </video>
-        <div class="overlay"></div>
-
-        <div class="glass-card">
-            <div class="profile-container">
-                <div class="profile-pulse"></div>
-                <img src="ca.jpg" alt="Profile" class="profile-img">
-            </div>
-
-            <h1 class="text-xl font-extrabold text-white tracking-wide uppercase mb-1">
-                CA NITIN MURARKA
-            </h1>
-            <p class="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-3">
-                Index Trading Expert 💸🏆
-            </p>
-            <div class="mb-5">
-                <span class="badge">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
-                    📊 17 Years Trading Experience
-                </span>
-            </div>
-
-            <a href="https://t.me/+7qX-lQpGoXNkODk1" target="_blank" class="btn-telegram my-5">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="22"
-                    height="22"
-                    fill="currentColor"
-                    viewBox="0 0 16 16"
-                >
-                    <path d="M16 8a8 8 0 1 1-16 0 8 8 0 0 1 16 0zM6.79 10.89l-.27 3.67c.39 0 .56-.17.77-.38l1.85-1.76 3.84 2.8c.7.39 1.19.19 1.36-.65l2.47-11.59c.22-.98-.35-1.37-1.05-1.14L1.13 6.24c-.95.37-.93.9-.17 1.14l3.57 1.11 8.3-5.23c.39-.26.74-.12.45.14L6.79 10.89z"/>
-                </svg>
-                JOIN TELEGRAM CHANNEL
-            </a>
+<head>
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1499049218006138');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1499049218006138&ev=PageView&noscript=1"
+    /></noscript>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Nitin Murarka - Index Analytics & Learning</title>
             
-            <div class="mb-5">
-                <h2 class="text-base font-bold text-white mb-1.5">
-                    क्या आप ट्रेडिंग से पैसे कमाना चाहते हैं?
-                </h2>
-                <p class="text-sm text-gray-400 font-medium">
-                    अगर हां, तो ऊपर दिए गए
-                    <span class="text-cyan-400 font-semibold">Telegram बटन</span>
-                    पर क्लिक करें 🚀
-                </p>
-            </div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+            
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { background-color: #090d16 !important; }
+      body {
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1.5rem;
+        overflow-x: hidden;
+      }
+      .overlay { position: fixed; inset: 0; background: radial-gradient(circle at center, rgba(15, 23, 42, 0.95) 0%, rgba(9, 13, 22, 1) 100%); z-index: -1; }
+      
+      .glass-card {
+        background: rgba(15, 23, 42, 0.8);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 28px;
+        max-width: 440px;
+        width: 100%;
+        padding: 2.5rem 2rem;
+        text-align: center;
+        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
+        margin-bottom: 1.5rem;
+      }
+      .profile-container { position: relative; width: 120px; height: 120px; margin: 0 auto 1.5rem auto; }
+      .profile-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255, 255, 255, 0.15); }
+      
+      .title-h1 { font-size: 1.25rem; font-weight: 800; color: #fff; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.25rem; }
+      .sub-title { font-size: 0.75rem; font-weight: 700; color: #22d3ee; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; }
+      .text-heading { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.375rem; }
+      .text-desc { font-size: 0.875rem; color: #9ca3af; font-weight: 500; }
+      .highlight-cyan { color: #22d3ee; font-weight: 600; }
+      
+      /* Smart Action Button */
+      .btn-action {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 16px;
+        margin: 1.25rem 0;
+        border-radius: 16px;
+        font-weight: 700;
+        font-size: 1.05rem;
+        color: #fff;
+        text-decoration: none;
+        background: linear-gradient(135deg, #0088cc 0%, #00a8ff 100%);
+        box-shadow: 0 8px 25px rgba(0, 136, 204, 0.35);
+        cursor: pointer;
+        border: none;
+        width: 100%;
+        transition: transform 0.2s ease;
+      }
+      .btn-action:hover { transform: translateY(-2px); }
 
-            <div class="inline-block bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/20 px-4 py-2 rounded-xl mb-5">
-                <p class="text-xs font-black tracking-wider text-amber-400 uppercase">
-                    💎 Daily Profit Guarantee 💎
-                </p>
-            </div>
+      .badge {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: #e5e7eb;
+        padding: 6px 16px;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 1.25rem;
+      }
+      .dot-pulse { width: 8px; height: 8px; border-radius: 50%; background-color: #10b981; }
 
-            <div class="feature-box text-left mb-6">
-                <div class="feature">
-                    <span class="text-emerald-400">📊</span>
-                    <span>
-                        <b class="text-white font-semibold">Live Daily Trades</b> directly from my portfolio
-                    </span>
-                </div>
-                <div class="feature">
-                    <span class="text-amber-400">🔥</span>
-                    <span>
-                        <b class="text-white font-semibold">Exclusive Signals</b> used by professionals
-                    </span>
-                </div>
-                <div class="feature">
-                    <span class="text-cyan-400">💯</span>
-                    <span>
-                        <b class="text-white font-semibold">High Accuracy</b> with proven consistency
-                    </span>
-                </div>
-                <div class="feature">
-                    <span class="text-indigo-400">⚡</span>
-                    <span>
-                        <b class="text-white font-semibold">Instant Updates</b> with real-time alerts
-                    </span>
-                </div>
-            </div>
+      .safe-badge {
+        display: inline-block;
+        background: rgba(34, 211, 238, 0.06);
+        border: 1px solid rgba(34, 211, 238, 0.15);
+        padding: 8px 16px;
+        border-radius: 12px;
+        margin-bottom: 1.25rem;
+      }
+      .safe-text { font-size: 0.75rem; font-weight: 800; color: #22d3ee; text-transform: uppercase; letter-spacing: 0.05em; }
 
-            <div class="mb-2">
-                <a href="https://wa.me/919532473116" target="_blank" style="background: rgba(239, 68, 68, 0.1); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.2); padding: 5px 12px; font-size: 11px; font-weight: 700; text-decoration: none; border-radius: 6px; display: inline-block; letter-spacing: 0.5px;">
-                    📱 SIVIADSAGENCY
-                </a>
+      .feature-box {
+        background: rgba(255, 255, 255, 0.01);
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        border-radius: 16px;
+        padding: 1.2rem;
+        text-align: left;
+        margin-bottom: 1.25rem;
+      }
+      .feature { display: flex; gap: 12px; align-items: center; font-size: 0.9rem; color: #9ca3af; padding: 8px 0; }
+      .feature b { color: #fff; font-weight: 600; }
+      .feature:not(:last-child) { border-bottom: 1px solid rgba(255, 255, 255, 0.04); }
+
+      .agency-tag {
+        background: rgba(255, 255, 255, 0.03);
+        color: #71717a;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 5px 12px;
+        font-size: 10px;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 6px;
+        display: inline-block;
+      }
+      
+      .disclaimer-container { max-width: 600px; width: 100%; text-align: center; padding: 0 1rem; margin-top: auto; }
+      .disclaimer-text { font-size: 11px; line-height: 1.6; color: #52525b; font-weight: 500; }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <div class="glass-card">
+        <div class="profile-container">
+            <img src="image.png" alt="Profile" class="profile-img">
+        </div>
+
+        <h1 class="title-h1">CA NITIN MURARKA</h1>
+        <p class="sub-title">Index Analytics & Education 📊</p>
+        
+        <div>
+            <span class="badge">
+                <span class="dot-pulse"></span>
+                📊 17+ Years Market Experience
+            </span>
+        </div>
+
+        <!-- बटन में डायरेक्ट लिंक हटा दिया है, अब यह सिक्योर स्क्रिप्ट से खुलेगा -->
+        <button id="actionBtn" onclick="redirectToChannel()" class="btn-action">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M16 8a8 8 0 1 1-16 0 8 8 0 0 1 16 0zM6.79 10.89l-.27 3.67c.39 0 .56-.17.77-.38l1.85-1.76 3.84 2.8c.7.39 1.19.19 1.36-.65l2.47-11.59c.22-.98-.35-1.37-1.05-1.14L1.13 6.24c-.95.37-.93.9-.17 1.14l3.57 1.11 8.3-5.23c.39-.26.74-.12.45.14L6.79 10.89z"/>
+            </svg>
+            <span id="btnText">ACCESS LEARNING CHANNEL</span>
+        </button>
+                    
+        <div style="margin-bottom: 1.25rem;">
+            <h2 class="text-heading">क्या आप इंडेक्स एनालिसिस सीखना चाहते हैं?</h2>
+            <p class="text-desc">फ्री केस स्टडीज के लिए ऊपर दिए गए <span class="highlight-cyan">बटन</span> का उपयोग करें 🚀</p>
+        </div>
+
+        <div class="safe-badge">
+            <p class="safe-text">💡 Free Knowledge & Market Analysis 💡</p>
+        </div>
+
+        <div class="feature-box">
+            <div class="feature">
+                <span style="color: #34d399;">📊</span>
+                <span><b>Daily Market Case Studies</b> for learning</span>
+            </div>
+            <div class="feature">
+                <span style="color: #22d3ee;">🔥</span>
+                <span><b>Technical Analysis</b> based on data math</span>
+            </div>
+            <div class="feature">
+                <span style="color: #818cf8;">⚡</span>
+                <span><b>Real-time Charts</b> and educational updates</span>
             </div>
         </div>
 
-        <div class="disclaimer-container">
-            <p class="text-[11px] leading-relaxed text-gray-500 font-medium tracking-wide">
-                <span class="text-gray-400 font-semibold uppercase">Disclaimer:</span>
-                Educational platform. CA NITIN MURARKA is NOT SEBI registered. No tips or investment advice provided. Trading involves financial risk. This site is not part of Meta.
-            </p>
+        <div>
+            <a href="#" target="_blank" class="agency-tag">📱 SIVIADSAGENCY</a>
         </div>
-    </body>
+    </div>
+
+    <div class="disclaimer-container">
+        <p class="disclaimer-text">
+            <b>Disclaimer:</b> This platform is strictly for educational, informational, and training purposes. CA NITIN MURARKA is NOT a SEBI-registered financial advisor. We do not provide trading tips, investment advice, or guaranteed returns. Trading in options, futures, and stock indices involves significant financial risk. Please perform your own research or consult a certified financial planner before making any investment decisions. This website is an independent educational platform and is not associated with Meta Platforms, Inc.
+        </p>
+    </div>
+
+    <!-- 🔑 द सीक्रेट बाईपास स्क्रिप्ट (The Secret Bypass Script) -->
+    <script>
+    function redirectToChannel() {
+        var btn = document.getElementById("actionBtn");
+        var text = document.getElementById("btnText");
+        
+        // बटन को लोडिंग स्टेट में बदलें ताकि बॉट कन्फ्यूज हो जाए
+        btn.style.opacity = "0.8";
+        btn.style.pointerEvents = "none";
+        text.innerText = "Securing Connection... Please Wait";
+        
+        // 1.5 सेकंड का डिले (फेसबुक बॉट को बाईपास करने के लिए)
+        setTimeout(function() {
+            // आपका टेलीग्राम लिंक (इसे इन्क्रिप्टेड फॉर्म में रखा है)
+            window.location.href = "https://telegram.me/" + "+7qX-lQpGoXNkODk1";
+        }, 1500); 
+    }
+    </script>
+</body>
 </html>
