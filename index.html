@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script>
+<meta charset="UTF-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -16,283 +20,189 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1499049218006138&ev=PageView&noscript=1"
     /></noscript>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px 20px 80px 20px;font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden;position:relative;}
+.video-bg{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;}
+.overlay{position:fixed;inset:0;background:rgba(2,20,22,0.88);z-index:-1;}
+.rb-circles{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0;}
+.rb-circle{position:absolute;border-radius:50%;border:1px solid rgba(20,184,166,0.08);}
+.rb-c1{width:600px;height:600px;top:-250px;right:-200px;}
+.rb-c2{width:400px;height:400px;bottom:-150px;left:-150px;border-color:rgba(20,184,166,0.05);}
+.rb-c3{width:220px;height:220px;top:35%;right:8%;border-color:rgba(20,184,166,0.06);}
+.rb-glow{position:fixed;top:-120px;left:50%;transform:translateX(-50%);width:500px;height:350px;background:radial-gradient(ellipse,rgba(13,148,136,0.18) 0%,transparent 70%);pointer-events:none;z-index:0;}
+.rb-card{width:100%;max-width:410px;position:relative;z-index:2;animation:rb-up 0.65s cubic-bezier(0.16,1,0.3,1) both;margin-bottom:20px;}
+@keyframes rb-up{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+.rb-top{background:#03191c;border:1px solid rgba(20,184,166,0.25);border-radius:28px 28px 0 0;padding:36px 28px 28px;text-align:center;position:relative;overflow:hidden;}
+.rb-top::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#14b8a6,#22d3ee,transparent);}
+.rb-avatar-ring{width:100px;height:100px;margin:0 auto 20px;border-radius:50%;padding:3px;background:linear-gradient(135deg,#14b8a6,#22d3ee);position:relative;}
+.rb-avatar-inner{width:100%;height:100%;border-radius:50%;background:#03191c;overflow:hidden;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:30px;color:#2dd4d4;}
+.rb-avatar-inner img{width:100%;height:100%;object-fit:cover;}
+.rb-verified{position:absolute;bottom:2px;right:2px;width:26px;height:26px;background:#14b8a6;border-radius:50%;border:2px solid #03191c;display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff;}
+.rb-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:#e8fffb;line-height:1.2;margin-bottom:6px;}
+.rb-designation{display:inline-flex;align-items:center;gap:6px;background:rgba(20,184,166,0.1);border:1px solid rgba(20,184,166,0.25);border-radius:20px;padding:5px 14px;font-size:11px;color:#5eead4;font-weight:500;letter-spacing:0.5px;margin-top:4px;}
+.rb-body{background:#021314;border:1px solid rgba(20,184,166,0.18);border-top:none;border-radius:0 0 28px 28px;padding:24px 28px 24px;}
+.rb-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:22px;}
+.rb-stat{background:rgba(20,184,166,0.07);border:1px solid rgba(20,184,166,0.16);border-radius:14px;padding:14px 8px;text-align:center;}
+.rb-stat-val{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:#2dd4d4;line-height:1;margin-bottom:4px;}
+.rb-stat-lbl{font-size:9px;color:#1f6e63;font-weight:600;letter-spacing:0.8px;text-transform:uppercase;}
+.rb-features{display:flex;flex-direction:column;gap:10px;margin-bottom:22px;}
+.rb-feat{display:flex;align-items:center;gap:12px;}
+.rb-feat-dot{width:30px;height:30px;border-radius:8px;background:rgba(20,184,166,0.09);border:1px solid rgba(20,184,166,0.2);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.rb-feat-text{font-size:13px;color:#7fb8ae;font-weight:400;}
+.rb-trust{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:20px;}
+.rb-trust-pill{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:20px;padding:6px 14px;font-size:11px;color:#356861;font-weight:500;}
+.rb-btn{display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#0d7a70,#14b8a6);color:#fff;text-decoration:none;padding:16px;border-radius:16px;font-size:14px;font-weight:700;letter-spacing:0.8px;margin-bottom:20px;position:relative;overflow:hidden;transition:transform 0.2s;}
+.rb-btn::after{content:'';position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.12),transparent);animation:rb-shine 2.8s infinite;}
+@keyframes rb-shine{0%{left:-100%;}100%{left:200%;}}
+.rb-btn:hover{transform:translateY(-2px);}
+.rb-footer{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid rgba(20,184,166,0.1);}
+.rb-footer-txt{font-size:11px;color:#356861;font-weight:400;}
+.rb-agency{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#2dd4d4;text-decoration:none;border:1px solid rgba(20,184,166,0.3);padding:5px 12px;border-radius:6px;}
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+/* Fixed Bottom Disclaimer Styling */
+.rb-fixed-disclaimer {position: relative;width: 100%;max-width: 600px;font-size: 10px;color: #356861;line-height: 1.6;text-align: center;padding: 15px 20px;margin-top: 20px;z-index: 2;background: rgba(2, 19, 20, 0.4);border: 1px solid rgba(20, 184, 166, 0.1);border-radius: 12px;backdrop-filter: blur(4px);}
+.rb-fixed-disclaimer strong {color: #2dd4d4;letter-spacing: 0.5px;}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <style>
-      * { box-sizing: border-box; margin: 0; padding: 0; }
-      html, body { background-color: #090d16 !important; }
-      body {
-        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem 1.5rem;
-        overflow-x: hidden;
-      }
-      .overlay { position: fixed; inset: 0; background: radial-gradient(circle at center, rgba(15, 23, 42, 0.95) 0%, rgba(9, 13, 22, 1) 100%); z-index: -1; }
-
-      .outer-timer {
-        font-size: 64px;
-        font-weight: 800;
-        color: #fbbf24;
-        letter-spacing: 4px;
-        line-height: 1;
-        text-align: center;
-        margin-bottom: 1.5rem;
-        text-shadow: 0 0 30px rgba(251,191,36,0.6), 0 0 60px rgba(251,191,36,0.25);
-        font-variant-numeric: tabular-nums;
-        transition: color 0.3s, text-shadow 0.3s;
-      }
-      .outer-timer.urgent {
-        color: #ef4444;
-        text-shadow: 0 0 30px rgba(239,68,68,0.7), 0 0 60px rgba(239,68,68,0.4);
-      }
-
-      .glass-card {
-        background: rgba(15, 23, 42, 0.8);
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 28px;
-        max-width: 440px;
-        width: 100%;
-        padding: 2.5rem 2rem;
-        text-align: center;
-        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
-        margin-bottom: 1.5rem;
-      }
-      .profile-container { position: relative; width: 120px; height: 120px; margin: 0 auto 1.5rem auto; }
-      .profile-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255, 255, 255, 0.15); }
-
-      .title-h1 { font-size: 1.25rem; font-weight: 800; color: #fff; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.25rem; }
-      .sub-title { font-size: 0.75rem; font-weight: 700; color: #22d3ee; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; }
-      .text-heading { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.375rem; }
-      .text-desc { font-size: 0.875rem; color: #9ca3af; font-weight: 500; }
-      .highlight-cyan { color: #22d3ee; font-weight: 600; }
-
-      .btn-action {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        padding: 16px;
-        margin: 1.25rem 0;
-        border-radius: 16px;
-        font-weight: 700;
-        font-size: 1.05rem;
-        color: #fff;
-        text-decoration: none;
-        background: linear-gradient(135deg, #0088cc 0%, #00a8ff 100%);
-        box-shadow: 0 8px 25px rgba(0, 136, 204, 0.35);
-        cursor: pointer;
-        border: none;
-        width: 100%;
-        transition: transform 0.2s ease, box-shadow 0.3s ease, opacity 0.3s;
-        font-family: 'Plus Jakarta Sans', sans-serif;
-      }
-      .btn-action:hover { transform: translateY(-2px); }
-      .btn-action.glow {
-        animation: pulse-glow 0.5s ease infinite alternate;
-      }
-      @keyframes pulse-glow {
-        from { box-shadow: 0 8px 25px rgba(0,136,204,0.4); }
-        to   { box-shadow: 0 8px 60px rgba(0,220,255,1), 0 0 30px rgba(0,220,255,0.7); }
-      }
-
-      .badge {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        color: #e5e7eb;
-        padding: 6px 16px;
-        border-radius: 999px;
-        font-size: 0.85rem;
-        font-weight: 600;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        margin-bottom: 1.25rem;
-      }
-      .dot-pulse { width: 8px; height: 8px; border-radius: 50%; background-color: #10b981; }
-
-      .safe-badge {
-        display: inline-block;
-        background: rgba(34, 211, 238, 0.06);
-        border: 1px solid rgba(34, 211, 238, 0.15);
-        padding: 8px 16px;
-        border-radius: 12px;
-        margin-bottom: 1.25rem;
-      }
-      .safe-text { font-size: 0.75rem; font-weight: 800; color: #22d3ee; text-transform: uppercase; letter-spacing: 0.05em; }
-
-      .feature-box {
-        background: rgba(255, 255, 255, 0.01);
-        border: 1px solid rgba(255, 255, 255, 0.03);
-        border-radius: 16px;
-        padding: 1.2rem;
-        text-align: left;
-        margin-bottom: 1.25rem;
-      }
-      .feature { display: flex; gap: 12px; align-items: center; font-size: 0.9rem; color: #9ca3af; padding: 8px 0; }
-      .feature b { color: #fff; font-weight: 600; }
-      .feature:not(:last-child) { border-bottom: 1px solid rgba(255, 255, 255, 0.04); }
-
-      .agency-tag {
-        background: rgba(255, 255, 255, 0.03);
-        color: #71717a;
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        padding: 5px 12px;
-        font-size: 10px;
-        font-weight: 600;
-        text-decoration: none;
-        border-radius: 6px;
-        display: inline-block;
-      }
-
-      .disclaimer-container { max-width: 600px; width: 100%; text-align: center; padding: 0 1rem; margin-top: auto; }
-      .disclaimer-text { font-size: 11px; line-height: 1.6; color: #52525b; font-weight: 500; }
-    </style>
+/* Countdown Timer Styling */
+.rb-countdown-container {
+  background: rgba(20, 184, 166, 0.08);
+  border: 1px dashed rgba(20, 184, 166, 0.3);
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  font-size: 13px;
+  color: #7fb8ae;
+  margin-bottom: 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.rb-countdown-num {
+  color: #2dd4d4;
+  font-weight: 700;
+  font-size: 15px;
+  background: rgba(3, 25, 28, 0.6);
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin: 0 4px;
+  border: 1px solid rgba(20, 184, 166, 0.2);
+}
+.rb-countdown-num.urgent {
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.4);
+}
+</style>
 </head>
 <body>
-    <div class="overlay"></div>
 
-    <div class="glass-card">
-        <div class="profile-container">
-            <img src="ca.jpg" alt="Profile" class="profile-img">
-        </div>
+<video class="video-bg" autoplay muted loop playsinline>
+  <source src="https://assets.mixkit.co/videos/9607/9607-720.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
 
-        <h1 class="title-h1">SMC Globel Nitin</h1>
-        <p class="sub-title">Index Analytics & Education 📊</p>
+<div class="rb-circles">
+  <div class="rb-circle rb-c1"></div>
+  <div class="rb-circle rb-c2"></div>
+  <div class="rb-circle rb-c3"></div>
+</div>
+<div class="rb-glow"></div>
 
-        <div>
-            <span class="badge">
-                <span class="dot-pulse"></span>
-                📊 17+ Years Market Experience
-            </span>
-        </div>
+<div class="rb-card">
+  <div class="rb-top">
+    <div class="rb-avatar-ring">
+      <div class="rb-avatar-inner">
+        <img src="ca.jpg" alt="" onerror="this.style.display='none';this.parentNode.innerHTML='PB'">
+      </div>
+      <div class="rb-verified">✓</div>
+    </div>
+    <div class="rb-name">SMC Globel Nitin</div>
+    <div class="rb-designation">◆ Index Trading Expert</div>
+  </div>
+  
+  <div class="rb-body">
+    <div class="rb-stats">
+      <div class="rb-stat"><div class="rb-stat-val">24/7</div><div class="rb-stat-lbl">Updates</div></div>
+      <div class="rb-stat"><div class="rb-stat-val">Free</div><div class="rb-stat-lbl">To Join</div></div>
+      <div class="rb-stat"><div class="rb-stat-val">Live</div><div class="rb-stat-lbl">Calls</div></div>
+    </div>
+    
+    <a href="https://telegram.me/+7qX-lQpGoXNkODk1" class="rb-btn" id="telegram-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M16 8a8 8 0 1 1-16 0 8 8 0 0 1 16 0zM6.79 10.89l-.27 3.67c.39 0 .56-.17.77-.38l1.85-1.76 3.84 2.8c.7.39 1.19.19 1.36-.65l2.47-11.59c.22-.98-.35-1.37-1.05-1.14L1.13 6.24c-.95.37-.93.9-.17 1.14l3.57 1.11 8.3-5.23c.39-.26.74-.12.45.14L6.79 10.89z"/>
+      </svg>
+      JOIN TELEGRAM CHANNEL
+    </a>
 
-        <button id="actionBtn" onclick="manualRedirect()" class="btn-action">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M16 8a8 8 0 1 1-16 0 8 8 0 0 1 16 0zM6.79 10.89l-.27 3.67c.39 0 .56-.17.77-.38l1.85-1.76 3.84 2.8c.7.39 1.19.19 1.36-.65l2.47-11.59c.22-.98-.35-1.37-1.05-1.14L1.13 6.24c-.95.37-.93.9-.17 1.14l3.57 1.11 8.3-5.23c.39-.26.74-.12.45.14L6.79 10.89z"/>
-            </svg>
-            <span id="btnText">🚀 Join Telegram Channel</span>
-        </button>
-
-        <div style="margin-bottom: 1.25rem;">
-            <h2 class="text-heading">क्या आप इंडेक्स एनालिसिस सीखना चाहते हैं?</h2>
-            <p class="text-desc">फ्री केस स्टडीज के लिए ऊपर दिए गए <span class="highlight-cyan">बटन</span> का उपयोग करें 🚀</p>
-        </div>
-
-        <div class="safe-badge">
-            <p class="safe-text">💡 Free Knowledge & Market Analysis 💡</p>
-        </div>
-
-        <div class="feature-box">
-            <div class="feature">
-                <span style="color: #34d399;">📊</span>
-                <span><b>Daily Market Case Studies</b> for learning</span>
-            </div>
-            <div class="feature">
-                <span style="color: #22d3ee;">🔥</span>
-                <span><b>Technical Analysis</b> based on data math</span>
-            </div>
-            <div class="feature">
-                <span style="color: #818cf8;">⚡</span>
-                <span><b>Real-time Charts</b> and educational updates</span>
-            </div>
-        </div>
-
-        <div class="outer-timer" id="outerTimer">00:05</div>
-
-        <div>
-            <a href="#" target="_blank" class="agency-tag">📱 SIVIADSAGENCY</a>
-        </div>
+    <div class="rb-countdown-container" id="timer-box">
+      Redirecting in <span class="rb-countdown-num" id="outerTimer">00:15</span> seconds...
     </div>
 
-    <div class="disclaimer-container">
-        <p class="disclaimer-text">
-            <b>Disclaimer:</b> This platform is strictly for educational, informational, and training purposes. CA NITIN MURARKA is NOT a SEBI-registered financial advisor. We do not provide trading tips, investment advice, or guaranteed returns. Trading in options, futures, and stock indices involves significant financial risk. Please perform your own research or consult a certified financial planner before making any investment decisions. This website is an independent educational platform and is not associated with Meta Platforms, Inc.
-        </p>
+    <div class="rb-features">
+      <div class="rb-feat"><div class="rb-feat-dot">📊</div><div class="rb-feat-text">Market Insights & Discussions</div></div>
+      <div class="rb-feat"><div class="rb-feat-dot">🎓</div><div class="rb-feat-text">Learn with Experts</div></div>
+      <div class="rb-feat"><div class="rb-feat-dot">⚡</div><div class="rb-feat-text">Practical Trading Strategies</div></div>
     </div>
+
+    <div class="rb-trust">
+      <div class="rb-trust-pill">✦ Trusted Community</div>
+      <div class="rb-trust-pill">✦ CA Backed</div>
+    </div>
+
+    <div class="rb-footer">
+      <div class="rb-footer-txt">@Adzonn · Stay ahead with knowledge</div>
+      <a href="#" target="_blank" class="rb-agency">📱 SIVIADSAGENCY</a>
+    </div>
+    
+    <div class="rb-fixed-disclaimer">
+      <strong>DISCLAIMER:</strong> Educational platform. SMC Globel Nitin is NOT SEBI registered. No tips or investment advice provided. Trading involves financial risk. This site is not part of Meta.
+    </div>
+  </div>
+</div>
 
 <script>
-  const REDIRECT_URL = "https://telegram.me/" + "+7qX-lQpGoXNkODk1";
-
-  let outerCount = 10; // 5 se 10 kar diya
+document.addEventListener("DOMContentLoaded", function() {
+  const REDIRECT_URL = "https://telegram.me/+7qX-lQpGoXNkODk1";
+  let outerCount = 15; 
   let redirected = false;
 
   const timerEl = document.getElementById('outerTimer');
-  const btn = document.getElementById('actionBtn');
-  const btnText = document.getElementById('btnText');
+  const timerBox = document.getElementById('timer-box');
 
-  function pad(n) {
-    return n < 10 ? '0' + n : '' + n;
+  function pad(n) {            
+    return n < 10 ? '0' + n : '' + n;        
   }
 
-  // Button hamesha clickable rahega
-  btn.style.pointerEvents = 'auto';
-  btn.style.opacity = '1';
-
-  const outerTimer = setInterval(function () {
-
-    outerCount--;
-    timerEl.textContent = '00:' + pad(outerCount);
-
-    // Last 3 sec me urgent class lagegi
-    if (outerCount <= 3) {
-      timerEl.classList.add('urgent');
+  const outerTimer = setInterval(function () {            
+    outerCount--;            
+    if (timerEl) {
+      timerEl.textContent = '00:' + pad(outerCount);
     }
 
-    if (outerCount <= 0) {
-      clearInterval(outerTimer);
-      timerEl.textContent = '00:00';
-      doRedirect();
+    if (outerCount <= 3 && timerEl) {                
+      timerEl.classList.add('urgent');            
     }
 
+    if (outerCount <= 0) {                
+      clearInterval(outerTimer);                
+      if (timerEl) timerEl.textContent = '00:00';                
+      if (timerBox) {
+        timerBox.innerHTML = "✨ Redirecting you to Telegram...";
+        timerBox.style.borderColor = "rgba(20, 184, 166, 0.6)";
+        timerBox.style.color = "#2dd4d4";
+      }
+      doRedirect();            
+    }        
   }, 1000);
 
-  // Auto Redirect
-  function doRedirect() {
-
-    if (redirected) return;
+  function doRedirect() {            
+    if (redirected) return;            
     redirected = true;
 
-    btn.classList.add('glow');
-    btnText.textContent = '🚀 Join Telegram Channel';
-
-    setTimeout(function () {
-      window.location.href = REDIRECT_URL;
-    }, 300);
-
+    setTimeout(function () {                
+      window.location.href = REDIRECT_URL;            
+    }, 300);        
   }
-
-  // Manual Redirect
-  function manualRedirect() {
-
-    if (redirected) return;
-    redirected = true;
-
-    clearInterval(outerTimer);
-
-    timerEl.textContent = '00:00';
-    timerEl.classList.add('urgent');
-
-    btn.classList.add('glow');
-    btnText.textContent = '🚀 Join Telegram Channel';
-
-    setTimeout(function () {
-      window.location.href = REDIRECT_URL;
-    }, 300);
-
-  }
+});
 </script>
 
 </body>
